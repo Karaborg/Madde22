@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Smart Room
+    link(rel='stylesheet', href='/stylesheets/mycss.css')
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+
+    center
+      body
+        .backgroundMiddle
+          .container
+            .screen
+              h2.textWhite(style='font-size: 26px; margin-right: 10px;') Add Song
+              .screen
+                div(style='width: fit-content')
+                  input.input#songName(placeholder='Song Name')
+                  input.input#songArtist(placeholder='Song Artist' style='margin-top: 10px')
+                  input.input#songDuration(placeholder='Song Duration' style='margin-top: 10px')
+                  button.button#btn Add Song
+    //jquery
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+    script.
+      $('#btn').click(function (e) {
+        e.preventDefault();
+        var name = $('#songName').val()
+        var artist = $('#songArtist').val()
+        var duration = $('#songDuration').val()
+        var data = {
+          'title': name,
+          'artist': artist,
+          'duration': duration
+        }
+        console.log(data)
+        $.post("/btn1", data)
+                .done(function (returnValue) {
+                  console.log(returnValue)
+                })
+      })
