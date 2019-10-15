@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/SongDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="229">
+              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -55,7 +55,6 @@
         <option value="$PROJECT_DIR$/nodemon.json" />
         <option value="$PROJECT_DIR$/public/stylesheets/mycss.css" />
         <option value="$PROJECT_DIR$/core/Model/model.js" />
-        <option value="$PROJECT_DIR$/core/database.js" />
         <option value="$PROJECT_DIR$/models/song.js" />
         <option value="$PROJECT_DIR$/core/Model/music.js" />
         <option value="$PROJECT_DIR$/views/index.pug" />
@@ -68,13 +67,14 @@
         <option value="$PROJECT_DIR$/client/src/queries/queries.js" />
         <option value="$PROJECT_DIR$/client/src/components/SongList.js" />
         <option value="$PROJECT_DIR$/client/src/components/SongDetails.js" />
+        <option value="$PROJECT_DIR$/core/database.js" />
       </list>
     </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="257" />
     <option name="y" value="24" />
     <option name="width" value="925" />
@@ -92,31 +92,6 @@
             <path>
               <item name="Madde22" type="b2602c69:ProjectViewProjectNode" />
               <item name="Madde22" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Madde22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Madde22" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Madde22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Madde22" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Madde22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Madde22" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Madde22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Madde22" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="queries" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -164,18 +139,17 @@
       <option name="presentableId" value="Default" />
       <updated>1571068846808</updated>
       <workItem from="1571068863080" duration="46529000" />
-      <workItem from="1571170112332" duration="2677000" />
+      <workItem from="1571170112332" duration="3636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49212000" />
+    <option name="totallyTimeSpent" value="50171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="587" y="26" width="925" height="682" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.29595375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.295764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -223,13 +197,6 @@
     <entry file="file://$PROJECT_DIR$/nodemon.template" />
     <entry file="file://$PROJECT_DIR$/nodemon.json" />
     <entry file="file://$PROJECT_DIR$/npm-debug.log" />
-    <entry file="file://$PROJECT_DIR$/core/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/Model/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -369,10 +336,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/SongDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="229">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
