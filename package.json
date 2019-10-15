@@ -6,22 +6,27 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "npm-cli": "^0.1.0",
-    "pug": "2.0.0-beta11",
+    "async": "^3.1.0",
     "bluebird": "latest",
     "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.4",
     "cookie-session": "latest",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "http-errors": "^1.6.3",
     "jade": "^1.11.0",
-    "request": "^2.69.0",
     "jquery": "^3.3.1",
+    "lodash": "^4.17.15",
     "mongodb": "^3.1.13",
     "mongoose": "latest",
     "mongoose-cache": "latest",
-    "mongoose-jsonschema": "latest"
+    "mongoose-jsonschema": "latest",
+    "morgan": "~1.9.1",
+    "npm-cli": "^0.1.0",
+    "pug": "2.0.0-beta11",
+    "request": "^2.69.0"
   }
 }

@@ -22,9 +22,9 @@ router.use('/graphql', graphqlHTTP({
 
 router.post('/btn1', function (req, res) {
   var params = req.body;
-  model.create(params, function (response) {
-    res.send(response)
-  });
+  model.list(function (response) {
+    res.send(response);
+  })
 });
 
 module.exports = router;
