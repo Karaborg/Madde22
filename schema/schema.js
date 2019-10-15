@@ -8,6 +8,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLFloat
 const SongType = new GraphQLObjectType({
     name: 'Song',
     fields: ( ) => ({
+        id: {type: GraphQLID},
         title: {type: GraphQLString},
         artist: {type: GraphQLString},
         duration: {type: GraphQLFloat},
@@ -27,15 +28,12 @@ const RootQuery = new GraphQLObjectType({
             type: SongType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args){
-                // code to get data from db / other source
-                //return _.find(songs, { id: args.id });
                 return Song.findById(args.id);
             }
         },
         songs: {
             type: new GraphQLList(SongType),
             resolve(parents, args){
-                //return songs
                 return Song.find({})
             }
         }

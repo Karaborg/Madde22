@@ -8,6 +8,7 @@ const getSongQuery = gql`
             duration
             album
             genres
+            id
         }
     } 
 `;
