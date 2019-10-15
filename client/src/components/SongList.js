@@ -15,12 +15,24 @@ const getSongsQuery = gql`
 `;
 
 class SongList extends Component {
+    displaySongs(){
+        var data = this.props.data;
+        if (data.loading){
+            return(<div>Loading Songs...</div>)
+        } else{
+            return data.songs.map(song => {
+                return(
+                    <li key={song.title}>{song.title}</li>
+                );
+            })
+        }
+    }
     render() {
         console.log(this.props);
         return (
             <div>
                 <ul id="song-list">
-                    <li>Song name</li>
+                    {this.displaySongs()}
                 </ul>
             </div>
         );
