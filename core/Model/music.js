@@ -8,7 +8,13 @@ module.exports = function (mongoose) {
         {
             title: {type: String},
             artist: {type: String},
-            duration: {type: Number}
+            duration: {type: Number},
+            genres: {type: Array},
+            album: {type: String},
+            clicked: {type: Number},
+            liked: {type: Number},
+            downloaded: {type: Number},
+            shared: {type: Number}
         }
     );
 
