@@ -1,22 +1,16 @@
-/*jshint esversion: 6 */
-"use strict";
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const schemaName = 'music';
+const songSchema = new Schema({
+    title: {type: String},
+    artist: {type: String},
+    duration: {type: Number},
+    genres: {type: String},
+    album: {type: String},
+    clicked: {type: Number},
+    liked: {type: Number},
+    downloaded: {type: Number},
+    shared: {type: Number}
+});
 
-module.exports = function (mongoose) {
-    var schema = mongoose.Schema(
-        {
-            title: {type: String},
-            artist: {type: String},
-            duration: {type: Number},
-            genres: {type: Array},
-            album: {type: String},
-            clicked: {type: Number},
-            liked: {type: Number},
-            downloaded: {type: Number},
-            shared: {type: Number}
-        }
-    );
-
-    return mongoose.model(schemaName, schema);
-};
+module.exports = mongoose.model('Song',songSchema);
