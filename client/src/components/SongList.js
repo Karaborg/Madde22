@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
+import SongDetails from "./SongDetails";
 
 const getSongsQuery = gql`
     {
@@ -34,6 +35,7 @@ class SongList extends Component {
                 <ul id="song-list">
                     {this.displaySongs()}
                 </ul>
+                <SongDetails/>
             </div>
         );
     }
