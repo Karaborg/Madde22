@@ -1,6 +1,7 @@
 const graphql = require('graphql');
 const _ = require('lodash');
-const Song = require("../core/Model/music.js");
+//const Song = require("../core/Model/music.js");
+const Song = require("../models/song.js");
 
 const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLFloat, GraphQLList, GraphQLInt, GraphQLNonNull } = graphql;
 

@@ -1,16 +1,10 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+/*jshint esversion: 6 */
+"use strict";
 
-const songSchema = new Schema({
-    title: {type: String},
-    artist: {type: String},
-    duration: {type: Number},
-    genres: {type: String},
-    album: {type: String},
-    clicked: {type: Number},
-    liked: {type: Number},
-    downloaded: {type: Number},
-    shared: {type: Number}
-});
+const Song = require("../../models/song.js");
 
-module.exports = mongoose.model('Song',songSchema);
+module.exports = function (mongoose) {
+    var schema = Song.songSchema;
+
+    return mongoose.model('Song', schema);
+};
