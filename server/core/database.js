@@ -25,7 +25,6 @@ require('mongoose-cache').install(mongoose, cacheOptions);
 var connectFunction = function () {
 
     var string1 = "mongodb+srv://default:xKlnDytv7yaY0gpk@madde22-idaqf.mongodb.net/test?retryWrites=true&w=majority";
-    var string2 = "mongodb://localhost/music";
 
     // Using `mongoose.connect`...
     var promise = mongoose.connect(string1, {
