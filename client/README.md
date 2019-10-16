@@ -978,7 +978,7 @@ npm install --save-dev enzyme react-addons-test-utils
 ```js
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import App from Track;
 
 it('renders without crashing', () => {
   shallow(<App />);

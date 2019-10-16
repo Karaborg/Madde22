@@ -16,7 +16,7 @@ const getSongsQuery = gql`
     }
 `;
 
-class SongList extends Component {
+class AlbumList extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -26,11 +26,11 @@ class SongList extends Component {
     displaySongs(){
         var data = this.props.data;
         if (data.loading){
-            return(<div>Loading Songs...</div>)
+            return(<div>Loading Albums...</div>)
         } else{
             return data.songs.map(song => {
                 return(
-                    <li id="title" key={song.id} onClick={(e) => {this.setState({selected: song.id})}}>{song.title}</li>
+                    <li id="title" key={song.id} onClick={(e) => {this.setState({selected: song.id})}}>{song.album}</li>
                 );
             })
         }
@@ -39,7 +39,7 @@ class SongList extends Component {
         //console.log(this.props);
         return (
             <div>
-                <ul id="song-list">
+                <ul id="album-list">
                     {this.displaySongs()}
                 </ul>
                 <SongDetails songId={this.state.selected}/>
@@ -48,5 +48,5 @@ class SongList extends Component {
     }
 }
 
-export default graphql(getSongsQuery)(SongList);
+export default graphql(getSongsQuery)(AlbumList);
 

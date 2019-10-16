@@ -8,16 +8,16 @@ class SongDetails extends Component {
         if (song){
             return(
                 <div>
-                    <h2>{song.title}</h2>
-                    <p>{song.artist}</p>
-                    <p>{song.duration}</p>
-                    <p>{song.album}</p>
-                    <p>{song.genres}</p>
+                    <h2 id="titleA">{song.title}</h2>
+                    <p id="titleB">Artist: {song.artist}</p>
+                    <p id="titleB">Duration: {song.duration} minutes</p>
+                    <p id="titleB">Album: {song.album}</p>
+                    <p id="titleB">Genre: {song.genres}</p>
                 </div>
             )
         }else {
             return(
-                <div>No song Selected</div>
+                <div id="titleA">No song Selected...</div>
             )
         }
     }

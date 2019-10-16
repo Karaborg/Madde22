@@ -1,9 +1,11 @@
 <!doctype html>
+<!--suppress ALL -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -16,16 +18,59 @@
     <title>React App</title>
   </head>
   <body>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="tabs">
+      <li id="tab" onclick="x('overview')">Overview</li>
+      <li id="tab" onclick="x('tracks')">Tracks</li>
+      <li id="tab" onclick="x('albums')">Albums</li>
+      <li id="tab" onclick="x('similar')">Similar Art</li>
+    </div>
+    <div>
+      <h1 id="title">Overview</h1>
+    </div>
+    <div id="hey">
+      <div id="tracks"></div>
+      <div id="overview">
+        <p id="title">Popular This Week</p>
+      </div>
+      <div id="album"></div>
+      <div id="similar"></div>
+    </div>
+    <script>
+      var tabOverview = document.getElementById("overview");
+      var tabTracks = document.getElementById("tracks");
+      var tabAlbums = document.getElementById("album");
+      var tabSimilar = document.getElementById("similar");
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      tabOverview.style.display = "block";
+      tabTracks.style.display = "none";
+      tabAlbums.style.display = "none";
+      function x(selectedTab) {
+        if (selectedTab == "overview") {
+          tabOverview.style.display = "block";
+          tabTracks.style.display = "none";
+          tabAlbums.style.display = "none";
+          document.getElementById("title").innerText = "Overview";
+          overview()
+        }else if (selectedTab == "tracks") {
+          tabOverview.style.display = "none";
+          tabTracks.style.display = "block";
+          tabAlbums.style.display = "none";
+          document.getElementById("title").innerText = "Track List";
+        } else if (selectedTab == "albums") {
+          tabOverview.style.display = "none";
+          tabTracks.style.display = "none";
+          tabAlbums.style.display = "block";
+          document.getElementById("title").innerText = "Album List";
+        } else if (selectedTab == "similar"){
+          tabOverview.style.display = "none";
+          tabTracks.style.display = "none";
+          tabAlbums.style.display = "none";
+          document.getElementById("title").innerText = "Similar Tracks";
+        }
+      }
+      function overview() {
 
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
+      }
+    </script>
   </body>
 </html>
