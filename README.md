@@ -24,7 +24,8 @@ $ rm -rf package-lock.json node_modules
 $ cd Madde22/server/bin && node www
 ```
 >The page will be available at,
-  - localhost:4000 and 
+  - localhost:4000 
+>and 
   - localhost:4000/graphql
 >This one gets the data directly from the MongoDB.
 
