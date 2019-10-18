@@ -36,3 +36,6 @@ $ cd Madde22/client && npm start
 >The page will be available at,
   - localhost:3000
 >This one gets the data from API, so you have to run the server side first to get the data.
+
+### Nunito-SemiBold
+> Application uses `Nunito-SemiBold` as a font-family. If you don't have it, it is inside of the main folder too.
