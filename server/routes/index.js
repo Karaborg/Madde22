@@ -27,4 +27,11 @@ router.post('/btn1', function (req, res) {
   })
 });
 
+router.post('/btn2', function (req, res) {
+  var params = req.body;
+  model.create(params, function (response) {
+    res.send(params)
+  })
+});
+
 module.exports = router;

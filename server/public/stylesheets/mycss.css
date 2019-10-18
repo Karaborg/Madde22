@@ -25,7 +25,7 @@
 
 
 body, button, input {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito SemiBold';
     /* font-weight: 700; */
     letter-spacing: 1.4px;
 }
@@ -65,6 +65,25 @@ body, button, input {
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
     z-index: -1;
+}
+
+pop {
+    font-size: 17px;
+    outline: 0;
+    border: 0;
+    background: none;
+    border: 1px solid #d9d9d9;
+    padding: 8px 0px;
+    margin-bottom: 2px;
+    color: #ddd;
+    text-transform: uppercase;
+    width: 130px;
+    font-family: inherit;
+    margin-right: 8px;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-radius: 5px;
 }
 
 button {
@@ -213,13 +232,11 @@ h6 {
     height: 100px;
     width: 600px;
     overflow-y: scroll;
-    font-family: 'Montserrat', sans-serif;
     /* font-weight: 700; */
     letter-spacing: 1.4px;
     color: lightgray;
     margin-bottom: 5px;
     margin-top: 10px;
-    font-size: 20px;
 }
 
 .force-overflow {

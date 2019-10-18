@@ -3,39 +3,140 @@ html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title Smart Room
+    title RESTful API
     link(rel='stylesheet', href='/stylesheets/mycss.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
     // Tell the browser to be responsive to screen width
     meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
 
     center
       body
-        .backgroundMiddle
+        //.background
           .container
             .screen
               h2.textWhite(style='font-size: 26px; margin-right: 10px;') Add Song
               .screen
                 div(style='width: fit-content')
-                  input.input#songName(placeholder='Song Name')
-                  input.input#songArtist(placeholder='Song Artist' style='margin-top: 10px')
-                  input.input#songDuration(placeholder='Song Duration' style='margin-top: 10px')
-                  button.button#btn Add Song
+                  input.input#sTitle(placeholder='Song Title')
+                  input.input#sArtist(placeholder='Song Artist' style='margin-top: 10px')
+                  input.input#sDuration(placeholder='Song Duration' style='margin-top: 10px')
+                  input.input#sGenre(placeholder='Song Genre' style='margin-top: 10px')
+                  input.input#sAlbum(placeholder='Song Album' style='margin-top: 10px')
+                  input.input#sClicked(placeholder='# of Clicks' style='margin-top: 10px')
+                  input.input#sLiked(placeholder='# of Likes' style='margin-top: 10px')
+                  button.button#btnAdd Add Song
+      .background
+        .container
+          .screen
+            h2.textWhite MENU
+            div#tabs(style='display: flex;')
+              button.button#btnOverview(style='margin-right: 10px;') Overview
+              button.button#btnTracks(style='margin-right: 10px;') Tracks
+              button.button#btnAlbums(style='margin-right: 10px;') Albums
+              button.button#btnSimilar Similar Art
+      .background
+        .container
+          .screen
+            div
+              h2.textWhite#title Overview
+            div#pup
+            div
+              div#addHere
+                table#table(style="width:100%")
+                table#tableTitle(style="width:100%")
+      .background
+        .container
+            div#top.screen
+
     //jquery
-    script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js')
     script.
-      $('#btn').click(function (e) {
+      var data = null;
+      $.post("/btn1", data)
+              .done(function (returnValue) {
+                data = returnValue;
+                //console.log(data);
+                setup(data)
+              })
+      $('#btnOverview').click(function (e) {
         e.preventDefault();
-        var name = $('#songName').val()
-        var artist = $('#songArtist').val()
-        var duration = $('#songDuration').val()
-        var data = {
-          'title': name,
-          'artist': artist,
-          'duration': duration
+        document.getElementById('title').innerText = "Popular This Week";
+        $("#table").empty();
+        overview();
+      })
+      $('#btnTracks').click(function (e) {
+        e.preventDefault();
+        $("#pup").empty()
+        document.getElementById('title').innerText = "Track List";
+        $("#table").empty()
+        $("#table").append('<div class="scrollbar" id="style-1" style="height: 300px; width: inherit; overflow-x: hidden; overflow-y: scroll;"></div>')
+        $("#style-1").append('<tr><th><h2 style="color: lightgray">Title</h2></th><th><h2 style="color: lightgray; margin-left: 150px;">Artist</h2></th></tr>')
+        for (var i = 0; i < data.accounts.length; i++) {
+          //$("#table").append('<tr><td><p style="color:lightgray;" onclick="'+ songDetay(data.accounts[i]._id)+'">' + data.accounts[i].title + '</p></td><td><p style="color: lightgray">' + data.accounts[i].artist + '</p></td></tr>')
+          $("#style-1").append('<tr><td><li style="color:lightgray;">' + data.accounts[i].title + '</li></td><td><p style="color: lightgray; margin-left: 150px;">' + data.accounts[i].artist + '</p></td></tr>')
         }
-        console.log(data)
-        $.post("/btn1", data)
+      })
+      $('#btnAlbums').click(function (e) {
+        e.preventDefault();
+        $("#pup").empty()
+        document.getElementById('title').innerText = "Album List";
+        $("#table").empty()
+        $("#table").append('<div class="scrollbar" id="style-1" style="height: 300px; width: inherit; overflow-x: hidden; overflow-y: scroll;"></div>')
+        $("#style-1").append('<tr><th><h2 style="color: lightgray">Album</h2></th><th><h2 style="color: lightgray; margin-left: 150px;">Artist</h2></th></tr>')
+        for (var i = 0; i < data.accounts.length; i++) {
+          //$("#table").append('<tr><td><p style="color:lightgray;" onclick="'+ songDetay(data.accounts[i]._id)+'">' + data.accounts[i].title + '</p></td><td><p style="color: lightgray">' + data.accounts[i].artist + '</p></td></tr>')
+          $("#style-1").append('<tr><td><li style="color:lightgray;" >' + data.accounts[i].album + '</li></td><td><p style="color: lightgray; margin-left: 150px;">' + data.accounts[i].artist + '</p></td></tr>')
+        }
+      })
+      $('#btnSimilar').click(function (e) {
+        e.preventDefault();
+        $("#pup").empty()
+        document.getElementById('title').innerText = "Similar Arts";
+        $("#table").empty()
+      })
+      $('#btnAdd').click(function (e) {
+        e.preventDefault();
+        var song = {
+          'title': $('#sTitle').val(),
+          'artist': $('#sArtist').val(),
+          'duration': $('#sDuration').val(),
+          'genres': $('#sGenre').val(),
+          'album': $('#sAlbum').val(),
+          'liked': $('#sLiked').val(),
+          'clicked': $('#sClicked').val()
+        }
+        $.post("/btn2", song)
                 .done(function (returnValue) {
                   console.log(returnValue)
                 })
       })
+      function songDetay(songId) {
+        console.log(songId)
+      }
+      function overview() {
+        $("#pup").empty()
+        $('#pup').append('<div id="bt" style="border-radius: 5px; border: 1px solid #d9d9d9; width: -webkit-fill-available; color: lightgray;"></div>')
+        var songArray = [];
+        for (var i = 0; i < data.accounts.length; i++) {
+          songArray.push(data.accounts[i].liked);
+        }
+        var choosenSong = Math.max.apply(null, songArray);
+        for (var i = 0; i < data.accounts.length; i++) {
+          if (data.accounts[i].liked === choosenSong){
+            //console.log(data.accounts[i])
+            $('#bt').append('<p>Title: '+data.accounts[i].title+'</p>')
+            $('#bt').append('<p>Artist: '+data.accounts[i].artist+'</p>')
+            $('#bt').append('<p>Album: '+data.accounts[i].album+'</p>')
+            $('#bt').append('<p>'+data.accounts[i].duration+' minutes</p>')
+          }
+        }
+      }
+      function setup(data){
+        $("#btnOverview").click();
+        // TODO: sort by liked
+        $('#top').append('<p style="color: lightgray">Most Popular Tracks</p>')
+        $('#top').append('<tr><th><h2 style="color: lightgray">#</h2></th><th><h2 style="color: lightgray">Title</h2></th><th><h2 style="color: lightgray; margin-left: 150px;">Artist</h2></th></tr>')
+        for (var i = 0; i < 5; i++) {
+          $("#top").append('<tr><td><p style="color: lightgray">'+(i+1)+"."+'</p></td><td><p style="color:lightgray; margin-left: 50px;">' + data.accounts[i].title + '</p></td><td><p style="color: lightgray; margin-left: 150px;">' + data.accounts[i].artist + '</p></td></tr>')
+        }
+      }
