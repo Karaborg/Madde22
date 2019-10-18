@@ -1,5 +1,5 @@
-# Madde22
-Madde22 Challenge : RESTful API
+## Madde22 Challenge
+RESTful API
 
 ### node_modules Setup
 >Make sure you install all node modules, both in server and client, before starting.
