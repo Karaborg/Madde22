@@ -26,7 +26,7 @@
     "mongoose-jsonschema": "latest",
     "morgan": "~1.9.1",
     "npm-cli": "^0.1.0",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "qjuery": "^1.0.0",
     "request": "^2.69.0"
   }
